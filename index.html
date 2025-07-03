@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Casino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="casino-container">
+        <header>
+            <h1>🎰 JS Casino 🎰</h1>
+            <div class="balance">
+                <span>Баланс: </span>
+                <span id="balance">1000</span>
+                <span> монет</span>
+            </div>
+        </header>
+
+        <div class="games-container">
+            <!-- Слот машина -->
+            <div class="game-card">
+                <h2>🎰 Слот машина</h2>
+                <div class="slot-machine">
+                    <div class="reels">
+                        <div class="reel" id="reel1">🍒</div>
+                        <div class="reel" id="reel2">🍋</div>
+                        <div class="reel" id="reel3">🍊</div>
+                    </div>
+                    <div class="bet-controls">
+                        <label>Ставка: </label>
+                        <input type="number" id="slot-bet" value="10" min="1" max="100">
+                        <button id="spin-btn">КРУТИТЬ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Рулетка -->
+            <div class="game-card">
+                <h2>🎯 Рулетка</h2>
+                <div class="roulette">
+                    <div class="roulette-wheel" id="roulette-wheel">
+                        <div class="ball"></div>
+                    </div>
+                    <div class="betting-area">
+                        <div class="bet-options">
+                            <button class="bet-btn" data-type="red">Красное (2x)</button>
+                            <button class="bet-btn" data-type="black">Черное (2x)</button>
+                            <button class="bet-btn" data-type="even">Четное (2x)</button>
+                            <button class="bet-btn" data-type="odd">Нечетное (2x)</button>
+                        </div>
+                        <div class="bet-controls">
+                            <label>Ставка: </label>
+                            <input type="number" id="roulette-bet" value="10" min="1" max="100">
+                            <button id="spin-roulette">КРУТИТЬ РУЛЕТКУ</button>
+                        </div>
+                        <div id="selected-bet">Выберите тип ставки</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блэкджек -->
+            <div class="game-card">
+                <h2>🃏 Блэкджек</h2>
+                <div class="blackjack">
+                    <div class="cards-area">
+                        <div class="dealer-cards">
+                            <h3>Дилер: <span id="dealer-score">0</span></h3>
+                            <div id="dealer-hand"></div>
+                        </div>
+                        <div class="player-cards">
+                            <h3>Игрок: <span id="player-score">0</span></h3>
+                            <div id="player-hand"></div>
+                        </div>
+                    </div>
+                    <div class="blackjack-controls">
+                        <input type="number" id="blackjack-bet" value="10" min="1" max="100">
+                        <button id="deal-btn">РАЗДАТЬ</button>
+                        <button id="hit-btn" disabled>ЕЩЕ</button>
+                        <button id="stand-btn" disabled>СТОП</button>
+                    </div>
+                    <div id="blackjack-result"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-log">
+            <h3>История игр</h3>
+            <div id="log"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
